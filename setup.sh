@@ -1,9 +1,9 @@
 #! /bin/bash
 printf "Installing RDP Be Patience..." >&2
 {
-sudo useradd -m RASEL
-sudo adduser RASEL sudo
-echo 'RASEL:45211' | sudo chpasswd
+sudo useradd -m RASEL45211
+sudo adduser RASEL45211 sudo
+echo 'RASEL45211:45211' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 sudo apt update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
@@ -29,6 +29,6 @@ printf "\nSetup Completed " >&2 ||
 printf "\nError Occured " >&2
 printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debian Linux And Paste Down\n'
 read -p "Paste Here: " CRP
-su - RASEL -c """$CRP"""
+su - RASEL45211 -c """$CRP"""
 printf 'Check https://remotedesktop.google.com/access/ \n'
 printf 'Your SUDO Pasword is: 45211 \n'
